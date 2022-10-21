@@ -27,6 +27,10 @@
         function empinar(){
             echo 'Empinar';
         }
+        //Sobre escrevedo
+        function trocarMarcha(){
+            echo 'Desengatar embreagem com a mão e engatar marcha com o pé';
+        }
     }
 
     class Veiculo {
@@ -39,31 +43,32 @@
         function freiar(){
             echo 'Freiar';
         }
+        function trocarMarcha(){
+            echo 'Desengatar embreagem com o pé e engatar marcha com a mão';
+        }
+        
     }
+
+    class Caminhao extends Veiculo{}
 
     $carro = new Carro('ABC1234', 'Branco');
     $moto = new Moto('DFE1234', 'Roxo');
+    $caminhao = new Caminhao();
 
-    echo '<pre>';
-    print_r($carro);
-    echo '<br /><br />';
-    print_r($moto);
-    echo '</pre>';
-    echo '<hr />';
 
-    $carro->abrirTetoSolar();
-    echo '<br />';
-    $carro->freiar();
-    echo '<br />';
-    $carro->acelerar();
-    echo '<hr />';
+    $carro->trocarMarcha();
 
-    $moto->empinar();
     echo '<br />';
-    $moto->acelerar();
+
+    $moto->trocarMarcha();
+
     echo '<br />';
-    $carro->freiar();
-    echo '<rh />';
+
+    $caminhao->trocarMarcha();
+
+
+   
+
 
 
 
